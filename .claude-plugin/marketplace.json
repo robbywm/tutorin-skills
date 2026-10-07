@@ -1,0 +1,16 @@
+{
+  "name": "tutorin-skills",
+  "owner": {
+    "name": "robbywm"
+  },
+  "metadata": {
+    "description": "Skill Claude untuk Tutorin (StartByte): ebook tutorial berbahasa Indonesia yang dipraktikkan sungguhan."
+  },
+  "plugins": [
+    {
+      "name": "tutorin",
+      "source": "./",
+      "description": "Penyusun Ebook Tutorin: materi → praktik & screenshot nyata → ebook berbahasa Indonesia, paket ZIP siap impor di /admin/impor."
+    }
+  ]
+}

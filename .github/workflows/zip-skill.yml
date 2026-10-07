@@ -1,0 +1,46 @@
+# Membuat ZIP folder skill untuk diunggah di claude.ai (Customize > Skills) dan menerbitkannya
+# sebagai aset rilis "zip". Link tetap untuk diunduh:
+# https://github.com/robbywm/tutorin-skills/releases/latest/download/penyusun-ebook-tutorin.zip
+name: ZIP skill untuk claude.ai
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - ".github/workflows/zip-skill.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: zip-skill
+  cancel-in-progress: false
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Kemas folder skill
+        # claude.ai mensyaratkan ZIP berisi folder yang namanya sama dengan nama skill.
+        run: |
+          cd skills
+          zip -r -X ../penyusun-ebook-tutorin.zip penyusun-ebook-tutorin -x 'penyusun-ebook-tutorin/node_modules/*'
+          unzip -l ../penyusun-ebook-tutorin.zip
+
+      - name: Terbitkan sebagai rilis "zip"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          catatan="ZIP folder skills/penyusun-ebook-tutorin dari commit ${GITHUB_SHA::7}, untuk diunggah sebagai skill di claude.ai (Customize > Skills). Dibuat ulang otomatis setiap kali skill berubah."
+          if gh release view zip > /dev/null 2>&1; then
+            gh release upload zip penyusun-ebook-tutorin.zip --clobber
+            gh release edit zip --notes "$catatan"
+          else
+            gh release create zip penyusun-ebook-tutorin.zip --target "$GITHUB_SHA" --latest \
+              --title "Skill penyusun-ebook-tutorin (ZIP untuk claude.ai)" --notes "$catatan"
+          fi

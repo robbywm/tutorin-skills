@@ -1,0 +1,20 @@
+# Templat ebook.yaml — aturan lengkap: referensi/format-tutorin.md § ebook.yaml
+judul: "Judul Ebook yang Menyebut Hasilnya"
+slug: judul-ebook-singkat        # huruf kecil, angka, tanda hubung; JANGAN diubah setelah impor pertama
+jenis: jual                      # jual | modul_les
+level_les: null                  # modul les: explorer | builder | creator | innovator
+kategori: IoT                    # ebook jual: AI | Coding | IoT | Robotik (huruf persis)
+level: Pemula                    # Pemula | Menengah | Lanjutan
+harga: 49000                     # rupiah tanpa titik; modul les: 0
+deskripsi: >-
+  Dua sampai empat kalimat teks polos untuk halaman detail: apa yang akan dibuat pembaca,
+  untuk siapa ebook ini, dan apa yang perlu disiapkan.
+alat_bahan:
+  - Laptop Windows 10/11
+  - Nama perangkat atau software beserta versinya
+bab:
+  - file: 00-pendahuluan.md
+    preview: true                # bisa dibaca gratis (ebook jual)
+  - file: 01-judul-bab-pertama.md
+  - file: 02-judul-bab-kedua.md
+    lembar_kerja: false          # true = bab boleh dicetak (modul les)

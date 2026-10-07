@@ -1,0 +1,11 @@
+{
+  "name": "tutorin",
+  "description": "Skill Tutorin (StartByte). Berisi penyusun-ebook-tutorin: mengubah materi apa pun menjadi ebook tutorial berbahasa Indonesia yang dipraktikkan sungguhan, lengkap dengan screenshot nyata dan paket ZIP siap impor di /admin/impor.",
+  "author": {
+    "name": "robbywm",
+    "url": "https://github.com/robbywm"
+  },
+  "homepage": "https://github.com/robbywm/tutorin-skills",
+  "repository": "https://github.com/robbywm/tutorin-skills",
+  "keywords": ["tutorin", "ebook", "tutorial", "bahasa-indonesia", "screenshot", "agent-skills"]
+}

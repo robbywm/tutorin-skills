@@ -1,0 +1,21 @@
+{
+  "name": "penyusun-ebook-tutorin",
+  "private": true,
+  "description": "Dependensi skrip skill Penyusun Ebook Tutorin (validator & pengemas ZIP, tangkap layar, olah gambar). Pasang sekali: npm install --prefix <folder-skill>",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "js-yaml": "5.4.2",
+    "jszip": "3.10.2",
+    "playwright-core": "1.63.0",
+    "remark-directive": "4.0.0",
+    "remark-gfm": "4.0.1",
+    "remark-parse": "11.0.0",
+    "sharp": "0.35.4",
+    "shiki": "4.4.3",
+    "unified": "11.0.5",
+    "unist-util-visit": "5.1.0",
+    "zod": "4.6.5"
+  }
+}
