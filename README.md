@@ -99,6 +99,7 @@ skills/penyusun-ebook-tutorin/
                                 ekstrak teks Word/PowerPoint, cek lingkungan
   package.json                  dependensi skrip (versi sama dengan aplikasi Tutorin)
 .github/workflows/zip-skill.yml ZIP untuk claude.ai
+LICENSE                         lisensi MIT
 ```
 
 ## Pemeliharaan
@@ -106,3 +107,7 @@ skills/penyusun-ebook-tutorin/
 Skill ini dikembangkan bersama aplikasi Tutorin, karena validatornya harus selalu sama dengan
 importer di aplikasi. Perubahan format masuk ke sini sebagai commit baru di `main`. Plugin Claude
 Code sengaja tidak memakai nomor versi: setiap commit langsung menjadi pembaruan.
+
+## Lisensi
+
+[MIT](LICENSE). ZIP untuk claude.ai menyertakan salinan lisensinya.

@@ -7,5 +7,6 @@
   },
   "homepage": "https://github.com/robbywm/tutorin-skills",
   "repository": "https://github.com/robbywm/tutorin-skills",
+  "license": "MIT",
   "keywords": ["tutorin", "ebook", "tutorial", "bahasa-indonesia", "screenshot", "agent-skills"]
 }

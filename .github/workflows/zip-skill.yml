@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - "skills/**"
+      - "LICENSE"
       - ".github/workflows/zip-skill.yml"
   workflow_dispatch:
 
@@ -25,8 +26,11 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Kemas folder skill
-        # claude.ai mensyaratkan ZIP berisi folder yang namanya sama dengan nama skill.
+        # claude.ai mensyaratkan ZIP berisi folder yang namanya sama dengan nama skill. LICENSE
+        # disalin ke folder itu hanya di dalam ZIP, supaya folder skill di repo tetap identik
+        # dengan salinan sumbernya di repo Tutorin.
         run: |
+          cp LICENSE skills/penyusun-ebook-tutorin/LICENSE
           cd skills
           zip -r -X ../penyusun-ebook-tutorin.zip penyusun-ebook-tutorin -x 'penyusun-ebook-tutorin/node_modules/*'
           unzip -l ../penyusun-ebook-tutorin.zip
